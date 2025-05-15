@@ -114,5 +114,21 @@ body.dark-mode a {
   <footer>
     <p>&copy; 2025 Luxury Watches. All rights reserved.</p>
   </footer>
+  <script>
+  const toggle = document.getElementById('mode-toggle');
+  const body = document.body;
+
+  // Load saved preference
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+  }
+
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    // Save preference
+    localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+  });
+</script>
+
 </body>
 </html>
